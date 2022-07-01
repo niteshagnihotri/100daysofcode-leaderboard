@@ -65,7 +65,7 @@ export default function App() {
               [...user]
                 .sort((a, b) => b.CURRENTSTREAK - a.CURRENTSTREAK)
                 .filter((val) => {
-                  if (filterVal === "") {
+                  if (filterVal === "" || val.NAME === undefined) {
                     return val
                   }
                   else if (val.NAME.toLowerCase().includes(filterVal.toLowerCase())) {
